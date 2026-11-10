@@ -50,7 +50,7 @@ def search_costs(
             if description.lower() not in (value["description"] or "").lower():
                 continue
 
-        if amount is not None and value["amount"] != amount:
+        if amount is not None and abs(value["amount"] - amount) > 200000:
             continue
 
         results[key] = value
